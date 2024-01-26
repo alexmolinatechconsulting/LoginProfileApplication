@@ -10,4 +10,8 @@ class ProfileViewModel : ViewModel() {
         value = "This is profile Fragment"
     }
     val text: LiveData<String> = _text
+
+    fun setText(text : String?){
+        _text.value = text
+    }
 }

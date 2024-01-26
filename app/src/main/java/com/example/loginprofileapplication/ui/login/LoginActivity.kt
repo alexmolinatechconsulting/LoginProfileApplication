@@ -62,8 +62,14 @@ private lateinit var binding: ActivityLoginBinding
             }
             setResult(Activity.RESULT_OK)
 
+            val bundle : Bundle = Bundle()
+            bundle.putString("email", username.text.toString())
+
+            val intent : Intent = Intent(this, MainActivity::class.java)
+            intent.putExtras(bundle)
+
             //Complete and destroy login activity once successful
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(intent, bundle)
             finish()
         })
 

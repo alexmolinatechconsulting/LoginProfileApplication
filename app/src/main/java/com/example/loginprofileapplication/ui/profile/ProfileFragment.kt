@@ -25,6 +25,9 @@ class ProfileFragment : Fragment() {
     ): View {
         val profileViewModel =
             ViewModelProvider(this).get(ProfileViewModel::class.java)
+        if (savedInstanceState != null) {
+            profileViewModel.setText(savedInstanceState.getString("email"))
+        }
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
 
